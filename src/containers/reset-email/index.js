@@ -1,8 +1,6 @@
 import React, { Component } from 'react'
 import { StyleSheet, ScrollView, Text, View, Alert, Image, TextInput, TouchableOpacity } from 'react-native'
 
-import { NavigationActions } from 'react-navigation'
-
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import { getUserInfo } from '../../reducers/user'
