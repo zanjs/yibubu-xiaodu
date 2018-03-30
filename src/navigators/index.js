@@ -38,57 +38,19 @@ import BindingPhone from '../containers/binding-phone'
 import Report from '../containers/report'
 import Block from '../containers/block'
 
-// test
-// import Test from '../containers/test'
-// import Editor from '../containers/editor'
-
 let tabBarOptions = {
   style: {
     ...ifIphoneX({
         height: 75,
         backgroundColor:'#fff',
         paddingBottom: 25,
-        // borderTopWidth:1
-        // borderColor: 'red'
+
     }, {
-        // height: 65,
         backgroundColor:'#fff',
-        // borderWidth:0,
-        // borderColor: 'red'
     })
   },
-
-  // tabStyle:{
-  //   borderTopWidth:1,
-  //   borderColor: '#e3e3e3'
-  // },
-
-  // activeBackgroundColor:'#fff',
   activeTintColor:'#08f',
-  // inactiveBackgroundColor:'#fff',
   inactiveTintColor:'#757575',
-  // allowFontScaling: false,
-
-  // indicatorStyle:{ top:0 },
-
-  // activeTabStyle: {
-  //   backgroundColor: 'red'
-  // },
-
-  // 文本
-  // labelStyle: {
-    // color: 'rgb(115, 115, 115)'
-    // fontSize: 10
-    // marginBottom:15,
-    // fontWeight: "bold"
-  // },
-  // indicatorStyle: {
-  //   borderBottomWidth:10,
-  //   borderColor: 'red',
-  //   top:0
-  // },
-  // showIcon: true
-  // showLabel: false
 }
 
 if (Platform.OS === 'android') {
@@ -115,7 +77,6 @@ if (Platform.OS === 'android') {
 
 const MainScreenNavigator = TabNavigator({
   Home: { screen: Home },
-  // ChooseTopic: { screen: ChooseTopic },
   Topics: { screen: Topics },
   Notifications: { screen: Notifications },
   Me: { screen: Me }
@@ -158,7 +119,6 @@ const App = StackNavigator({
   Agreement: { screen: Agreement },
   Report: { screen: Report },
   Block: { screen: Block }
-  // Test: { screen: Test }
 },{
   initialRouteName: 'Welcome',
   // cardStyle: {},
@@ -170,8 +130,6 @@ const App = StackNavigator({
       ...ifIphoneX({
         paddingTop:30,
         height: 75
-        // borderBottomWidth:1
-        // borderColor: '#e3e3e3'
       }, {
         height: Platform.OS === 'android' ? 50 : 65
       })
