@@ -2,41 +2,8 @@ import { PixelRatio, Platform } from 'react-native'
 import { StackNavigator, TabNavigator } from 'react-navigation'
 import { ifIphoneX } from 'react-native-iphone-x-helper'
 
-import Welcome from '../containers/welcome'
-import FastSignIn from '../containers/fast-sign-in'
 import SignIn from '../containers/sign-in'
-import SignUp from '../containers/sign-up'
-import OtherSignIn from '../containers/other-sign-in'
-import Forgot from '../containers/forgot'
-import Home from '../containers/home'
-import MineFollow from '../containers/mine-follow'
-import PostsDetail from '../containers/posts-detail'
-import Topics from '../containers/topics'
-import Notifications from '../containers/notifications'
-import Me from '../containers/me'
-import CommentDetail from '../containers/comment-detail'
-import WriteComment from '../containers/write-comment'
-import WritePosts from '../containers/write-posts'
-import ChooseTopic from '../containers/choose-topic'
-import Settings from '../containers/settings'
-import TopicDetail from '../containers/topic-detail'
-import PeopleDetail from '../containers/people-detail'
-import List from '../containers/list'
-import SocialAccount from '../containers/social-account'
-import Agreement from '../containers/agreement'
 
-// setting
-import ResetNickname from '../containers/reset-nickname'
-import ResetBiref from '../containers/reset-brief'
-import ResetGender from '../containers/reset-gender'
-import ResetPassword from '../containers/reset-password'
-import ResetEmail from '../containers/reset-email'
-import ResetAvatar from '../containers/reset-avatar'
-import ResetPhone from '../containers/reset-phone'
-import BindingPhone from '../containers/binding-phone'
-
-import Report from '../containers/report'
-import Block from '../containers/block'
 
 let tabBarOptions = {
   style: {
@@ -76,13 +43,10 @@ if (Platform.OS === 'android') {
 }
 
 const MainScreenNavigator = TabNavigator({
-  Home: { screen: Home },
-  Topics: { screen: Topics },
-  Notifications: { screen: Notifications },
-  Me: { screen: Me }
+  SignIn: { screen: SignIn },
 },
 {
-  initialRouteName: 'Home',
+  initialRouteName: 'SignIn',
   tabBarPosition: 'bottom',
   swipeEnabled:false,
   animationEnabled:false,
@@ -91,37 +55,10 @@ const MainScreenNavigator = TabNavigator({
 })
 
 const App = StackNavigator({
-  Main: { screen: MainScreenNavigator },
-  PostsDetail: { screen: PostsDetail },
-  WriteComment: { screen: WriteComment },
-  WritePosts: { screen: WritePosts },
-  ChooseTopic: { screen: ChooseTopic },
-  CommentDetail: { screen: CommentDetail },
-  Welcome: { screen: Welcome },
+  Main: { screen: SignIn },
   SignIn: { screen: SignIn },
-  Settings: { screen: Settings },
-  SignUp: { screen: SignUp },
-  Forgot: { screen: Forgot },
-  OtherSignIn: { screen: OtherSignIn },
-  TopicDetail: { screen: TopicDetail },
-  PeopleDetail: { screen: PeopleDetail },
-  List: { screen: List },
-  ResetNickname: { screen: ResetNickname },
-  ResetBiref: { screen: ResetBiref },
-  ResetGender: { screen: ResetGender },
-  ResetPassword: { screen: ResetPassword },
-  ResetEmail: { screen: ResetEmail },
-  ResetAvatar: { screen: ResetAvatar },
-  SocialAccount: { screen: SocialAccount },
-  FastSignIn: { screen: FastSignIn },
-  ResetPhone: { screen: ResetPhone },
-  BindingPhone: { screen: BindingPhone },
-  Agreement: { screen: Agreement },
-  Report: { screen: Report },
-  Block: { screen: Block }
 },{
-  initialRouteName: 'Welcome',
-  // cardStyle: {},
+  initialRouteName: 'SignIn',
   navigationOptions: {
     headerTruncatedBackTitle: '返回',
     headerBackTitle: null,
