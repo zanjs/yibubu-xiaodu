@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import { StyleSheet, Text, View, Alert, Button, Image, TextInput, TouchableOpacity } from 'react-native'
 
-// import { NavigationActions } from 'react-navigation'
 import { ActionSheetCustom as ActionSheet } from 'react-native-actionsheet'
 
 import { connect } from 'react-redux'
@@ -14,13 +13,11 @@ import { getQiNiuToken } from '../../actions/qiniu'
 import Qiniu,{ Auth, ImgOps, Conf, Rs, Rpc } from 'react-native-qiniu'
 import ImagePicker from 'react-native-image-crop-picker'
 
-// import Loading from 'react-native-loading-w'
 import Wait from '../../components/ui/wait'
 import HeadButton from '../../components/ui/head-button'
 
 import { uploadFile } from '../../common/upload-qiniu'
 
-// console.log(uploadFile);
 
 const CANCEL_INDEX = 0
 const DESTRUCTIVE_INDEX = 0
@@ -71,10 +68,6 @@ class ResetAvatar extends React.Component {
       showActionSheet: this.showActionSheet
     })
   }
-
-  // getLoading() {
-  // 	return this.refs['loading'];
-  // }
 
   updateAvatar(imageUrl, callback) {
 

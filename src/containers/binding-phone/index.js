@@ -8,7 +8,7 @@ import { loadUserInfo } from '../../actions/user'
 import { binding } from '../../actions/phone'
 
 import CaptchaButton from '../../components/captcha-button'
-import SelectCountry from '../../components/select-country'
+// import SelectCountry from '../../components/select-country'
 
 import gStyles from '../../styles'
 
@@ -71,9 +71,7 @@ class BindingPhone extends React.Component {
     return (<ScrollView style={styles.container} keyboardShouldPersistTaps="always">
 
                 <View style={{ flexDirection: 'row', borderWidth: 1, marginTop:-1, borderColor: '#e2e2e2', paddingLeft:10, backgroundColor:'#fff' }}>
-                  <View>
-                    <SelectCountry onChoose={res=>self.setState({ areaCode: res.code })} />
-                  </View>
+                 
                   <View style={{flex:1}}>
                   <TextInput
                     ref="phone"

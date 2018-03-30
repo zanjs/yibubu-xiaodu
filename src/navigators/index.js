@@ -3,6 +3,20 @@ import { StackNavigator, TabNavigator } from 'react-navigation'
 import { ifIphoneX } from 'react-native-iphone-x-helper'
 
 import SignIn from '../containers/sign-in'
+import Home from '../containers/home'
+
+
+// setting
+import ResetNickname from '../containers/reset-nickname'
+import ResetBiref from '../containers/reset-brief'
+import ResetGender from '../containers/reset-gender'
+import ResetPassword from '../containers/reset-password'
+import ResetEmail from '../containers/reset-email'
+import ResetAvatar from '../containers/reset-avatar'
+import ResetPhone from '../containers/reset-phone'
+
+import BindingPhone from '../containers/binding-phone'
+
 
 
 let tabBarOptions = {
@@ -43,6 +57,7 @@ if (Platform.OS === 'android') {
 }
 
 const MainScreenNavigator = TabNavigator({
+  Home: { screen: Home },
   SignIn: { screen: SignIn },
 },
 {
@@ -57,6 +72,15 @@ const MainScreenNavigator = TabNavigator({
 const App = StackNavigator({
   Main: { screen: SignIn },
   SignIn: { screen: SignIn },
+  Home: { screen: Home },
+  ResetNickname: { screen: ResetNickname },
+  ResetBiref: { screen: ResetBiref },
+  ResetGender: { screen: ResetGender },
+  ResetPassword: { screen: ResetPassword },
+  ResetEmail: { screen: ResetEmail },
+  ResetAvatar: { screen: ResetAvatar },
+  ResetPhone: { screen: ResetPhone },
+  BindingPhone: { screen: BindingPhone },
 },{
   initialRouteName: 'SignIn',
   navigationOptions: {
