@@ -66,6 +66,13 @@ class SignIn extends Component {
   componentWillMount() {
     this.loadCaptcha()
   }
+  
+  componentWillUnmount() {
+    //重写组件的setState方法，直接返回空
+    this.setState = (state,callback)=>{
+      return;
+    };  
+  }
 
   componentDidMount() {
     this.props.navigation.setParams({

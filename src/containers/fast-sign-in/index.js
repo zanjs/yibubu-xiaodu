@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
-import { StyleSheet, Text, Image, ImageBackground, View, TextInput, TouchableOpacity, AsyncStorage } from 'react-native'
-import Platform from 'Platform'
+import { Platform, StyleSheet, Text, Image, ImageBackground, View, TextInput, TouchableOpacity, AsyncStorage } from 'react-native'
 import { NavigationActions } from 'react-navigation'
 
 

@@ -42,6 +42,13 @@ class Welcome extends Component {
 
   }
 
+  componentWillUnmount() {
+    //重写组件的setState方法，直接返回空
+    this.setState = (state,callback)=>{
+      return;
+    };  
+  }
+
   componentDidMount() {
 
     const self = this
