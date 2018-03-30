@@ -122,7 +122,7 @@ class SignIn extends Component {
       // 储存token有效时间
       AsyncStorage.setItem('token_expires', (new Date().getTime() + 1000 * 60 * 60 * 24 * 30) + '', function(errs, result){
 
-        setTimeout(()=>{
+        // setTimeout(()=>{
 
           const resetAction = NavigationActions.reset({
             index: 0,
@@ -133,7 +133,7 @@ class SignIn extends Component {
 
           self.props.navigation.dispatch(resetAction)
 
-        }, 1000)
+        // }, 1000)
 
       })
 

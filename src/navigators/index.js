@@ -3,8 +3,8 @@ import { StackNavigator, TabNavigator } from 'react-navigation'
 import { ifIphoneX } from 'react-native-iphone-x-helper'
 
 import SignIn from '../containers/sign-in'
-// import FastSignIn from '../containers/fast-sign-in'
-// import SignUp from '../containers/sign-up'
+import FastSignIn from '../containers/fast-sign-in'
+import SignUp from '../containers/sign-up'
 
 import Welcome from '../containers/welcome'
 import Home from '../containers/home'
@@ -96,8 +96,8 @@ const App = StackNavigator({
   Main: { screen: MainScreenNavigator },
   Welcome: { screen: Welcome },
   SignIn: { screen: SignIn },
-  // FastSignIn: { screen: FastSignIn },
-  // SignUp: { screen: SignUp },
+  FastSignIn: { screen: FastSignIn },
+  SignUp: { screen: SignUp },
   Forgot: { screen: Forgot },
   Home: { screen: Home },
   PostsDetail: { screen: PostsDetail },

@@ -1,18 +1,15 @@
 import React, { Component } from 'react'
-import { Platform, StyleSheet, Text, Image, ImageBackground, View, TextInput, TouchableOpacity, AsyncStorage } from 'react-native'
+import { Platform,Dimensions, StyleSheet, Text, Image, ImageBackground, View, TextInput, TouchableOpacity, AsyncStorage } from 'react-native'
 import { NavigationActions } from 'react-navigation'
 
 
-import KeyboardSpacer from 'react-native-keyboard-spacer'
 import { ifIphoneX } from 'react-native-iphone-x-helper'
 
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import { signin } from '../../actions/sign'
-import { weiboGetUserInfo, QQGetUserInfo } from '../../actions/oauth'
 import { getClientInstalled } from '../../reducers/client-installed'
 
-import Dimensions from 'Dimensions'
 const screenWidth = Dimensions.get('window').width
 const screenHeight = Dimensions.get('window').height
 
@@ -57,72 +54,6 @@ class FastSignIn extends Component {
 
   }
 
-  qqSignIn() {
-
-    const self = this
-    const { clientInstalled, QQGetUserInfo } = this.props
-    const { navigate } = this.props.navigation
-
-    if (clientInstalled.qq && Platform.OS === 'ios') {
-
-     
-
-    } else {
-      navigate('OtherSignIn', {
-        successCallback: token => this.handleSignIn(token),
-        name: 'qq'
-      })
-    }
-
-  }
-
-  weiboSignIn() {
-
-    const self = this
-    const { navigate } = this.props.navigation
-    const { clientInstalled, weiboGetUserInfo } = this.props
-
-    /*
-    if (clientInstalled.weibo && Platform.OS === 'ios') {
-      WeiboAPI.login({
-        scope: 'all',
-        redirectURI: 'https://api.xiaoduyu.com'
-      }).then((response)=>{
-
-        weiboGetUserInfo({
-          data: {
-            weibo_access_token: response.accessToken,
-            refresh_token: response.refreshToken,
-            user_id: response.userID,
-            expiration_date: response.expirationDate
-          },
-          callback: (res)=>{
-            if (res.success) {
-              self.handleSignIn(res.data.access_token)
-            }
-          }
-        })
-
-        // console.log(res);
-      })
-    } else {
-    */
-      navigate('OtherSignIn', {
-        successCallback: token => this.handleSignIn(token),
-        name: 'weibo'
-      })
-    // }
-
-  }
-
-  githubSignIn() {
-    const { navigate } = this.props.navigation
-    navigate('OtherSignIn', {
-      successCallback: token => this.handleSignIn(token),
-      name: 'github'
-    })
-  }
-
   render() {
 
     const self = this
@@ -144,27 +75,7 @@ class FastSignIn extends Component {
             <Text style={styles.signUpButtonText}>创建账号</Text>
           </TouchableOpacity>
         </View>
-
-        <View style={{flex:1}}></View>
-
-        <View style={styles.otherSignInContainer}>
-          <View><Text style={styles.textWhite}>其他方式登陆</Text></View>
-          <View style={styles.otherSignIn}>
-            <TouchableOpacity onPress={this.qqSignIn} style={styles.otherSigninItem}>
-              <View style={styles.iconView}><Image source={require('./images/qq.png')} style={styles.icon} resizeMode="cover" /></View>
-              <View><Text style={styles.textWhite}>QQ</Text></View>
-            </TouchableOpacity>
-            <TouchableOpacity onPress={this.weiboSignIn} style={styles.otherSigninItem}>
-              <View style={styles.iconView}><Image source={require('./images/weibo.png')} style={styles.icon} resizeMode="cover" /></View>
-              <View><Text style={styles.textWhite}>微博</Text></View>
-            </TouchableOpacity>
-            <TouchableOpacity onPress={this.githubSignIn} style={styles.otherSigninItem}>
-              <View style={styles.iconView}><Image source={require('./images/github.png')} style={styles.icon} resizeMode="cover" /></View>
-              <View><Text style={styles.textWhite}>Github</Text></View>
-            </TouchableOpacity>
-          </View>
-        </View>
-
+      
       </View>
       </ImageBackground>)
   }
@@ -242,7 +153,5 @@ export default connect(
   },
   (dispatch, props) => ({
     signin: bindActionCreators(signin, dispatch),
-    weiboGetUserInfo: bindActionCreators(weiboGetUserInfo, dispatch),
-    QQGetUserInfo: bindActionCreators(QQGetUserInfo, dispatch)
   })
 )(FastSignIn)

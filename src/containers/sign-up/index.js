@@ -11,7 +11,6 @@ import { connect } from 'react-redux'
 import { signup, signin } from '../../actions/sign'
 import gStyles from '../../styles'
 import CaptchaButton from '../../components/captcha-button'
-import SelectCountry from '../../components/select-country'
 
 import KeyboardSpacer from 'react-native-keyboard-spacer'
 import Wait from '../../components/ui/wait'
@@ -48,7 +47,7 @@ class SignUp extends Component {
       captcha: '',
       error: {},
       visible: false,
-      areaCode: '',
+      areaCode: '+86',
       submitting: false
     }
     this.submit = this.submit.bind(this)
@@ -179,15 +178,6 @@ class SignUp extends Component {
         {nickname ? <View style={styles.tip}><Text style={styles.tipText}>{nickname}</Text></View> : null}
 
         <View style={{ flexDirection: 'row' }}>
-          <View>
-            <View style={styles.selectCountry}>
-              <SelectCountry
-                onChoose={(res)=>{
-                  self.setState({ areaCode: res.code })
-                }}
-                />
-            </View>
-          </View>
           <View style={{flex:1}}>
           <TextInput
             // style={{ height:45, borderLeftWidth: 1, borderColor: '#e2e2e2', paddingLeft:10 }}
