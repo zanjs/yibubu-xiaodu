@@ -11,14 +11,7 @@ class ChooseTopic extends React.Component {
   static navigationOptions = ({ navigation }) => {
     const { params = {} } = navigation.state
     return {
-      // header: null,
       title: '选择话题'
-      // tabBarLabel: (props) => {
-      //   return (<View style={stylesIcon.tabBarLabel}>
-      //     <View style={stylesIcon.tabBarLabelView}><Text>话题</Text></View>
-      //     <View style={[stylesIcon.tabBarLabelLine, props.focused ? stylesIcon.focused : null ]}></View>
-      //     </View>)
-      // }
     }
   }
 

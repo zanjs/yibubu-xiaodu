@@ -14,9 +14,7 @@ class WriteComment extends React.Component {
     const { params = {} } = navigation.state
     const { replyId, submit, allowPost = false } = params
     return {
-      // headerLeft: (<View><Button onPress={()=>params.cancel()} title={"取消"} /></View>),
       title: replyId ? '编写回复' : '编写评论',
-      // headerRight: (<View><Button onPress={()=>params.submit()} title={"提交"} /></View>),
       headerRight: <TouchableOpacity style={styles.button} onPress={allowPost ? ()=>submit() : ()=>{}}>
                     <Text style={allowPost ? styles.buttonText : styles.inactiveButtonText}>提交</Text>
                    </TouchableOpacity>
