@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { StyleSheet, Text, View, ScrollView, Alert, Image, TouchableOpacity, AsyncStorage } from 'react-native'
+import { Platform, StyleSheet, Text, View, ScrollView, Alert, Image, TouchableOpacity, AsyncStorage } from 'react-native'
 
 import { NavigationActions } from 'react-navigation'
 
@@ -11,8 +11,6 @@ import { signout } from '../../actions/sign'
 import { getClientInstalled } from '../../reducers/client-installed'
 
 import { ListItem } from '../../components/ui'
-
-import Platform from 'Platform'
 
 import websocket from '../../common/websocket'
 
