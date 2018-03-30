@@ -22,7 +22,7 @@ import WritePosts from '../containers/write-posts'
 import ChooseTopic from '../containers/choose-topic'
 import TopicDetail from '../containers/topic-detail'
 import List from '../containers/list'
-// import PeopleDetail from '../containers/people-detail'
+import PeopleDetail from '../containers/people-detail'
 
 // setting
 import Settings from '../containers/settings'
@@ -106,6 +106,7 @@ const App = StackNavigator({
   ChooseTopic: { screen: ChooseTopic },
   CommentDetail: { screen: CommentDetail },
   TopicDetail: { screen: TopicDetail },
+  PeopleDetail: { screen: PeopleDetail },
   List: { screen: List },
   Me: { screen: Me },
   Settings: { screen: Settings },

@@ -14,8 +14,8 @@ import Loading from '../../components/ui/loading'
 
 import MenuIcon from '../../components/ui/icon/menu'
 
-import Lightbox from 'react-native-lightbox'
-import Carousel from 'react-native-looped-carousel-2'
+// import Lightbox from 'react-native-lightbox'
+// import Carousel from 'react-native-looped-carousel-2'
 
 import Wait from '../../components/ui/wait'
 
@@ -102,14 +102,6 @@ class PeopleDetail extends React.Component {
                 }
               }, 1000)
             })
-
-            /*
-            if (res && res.success) {
-              Alert.alert('', '取消屏蔽成功')
-            } else {
-              Alert.alert('', res.error || '提交失败')
-            }
-            */
           }
         })
 
@@ -160,13 +152,15 @@ class PeopleDetail extends React.Component {
     if (people.avatar_url) {
 
       renderCarousel = () => {
-        return (<Carousel style={{ width: WINDOW_WIDTH, height: WINDOW_WIDTH }}>
+        return (
+        // <Carousel style={{ width: WINDOW_WIDTH, height: WINDOW_WIDTH }}>
           <Image
             style={{ flex: 1 }}
             resizeMode="contain"
-            source={{ uri: 'https:'+people.avatar_url.split('&')[0] }}
+            source={{ uri: people.avatar_url.split('&')[0] }}
           />
-        </Carousel>)
+        // </Carousel>
+      )
       }
 
     }
@@ -175,10 +169,10 @@ class PeopleDetail extends React.Component {
 
       <View style={[styles.head, S['m-b-10'], S['m-t-10']]}>
         <View>
-          {people.avatar_url ?
-            <Lightbox springConfig={{tension: 15, friction: 7}} swipeToDismiss={false} renderContent={renderCarousel}>
-              <Image source={{uri:'https:'+people.avatar_url}} style={styles.avatar} />
-            </Lightbox> : null}
+          {/* {people.avatar_url ? */}
+            {/* <Lightbox springConfig={{tension: 15, friction: 7}} swipeToDismiss={false} renderContent={renderCarousel}> */}
+              <Image source={{uri: people.avatar_url}} style={styles.avatar} />
+            {/* </Lightbox> : null} */}
         </View>
         <View style={[S['f-d-r'], {flex:1,justifyContent:'space-between'}]}>
           <View>

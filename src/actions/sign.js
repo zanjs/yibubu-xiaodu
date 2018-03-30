@@ -9,7 +9,7 @@ export function signout() {
 // 登录
 export function signin({ data, callback = ()=>{} }) {
   return dispatch => {
-
+    data.test = 'test'
     return Ajax({
       url: '/signin',
       type: 'post',

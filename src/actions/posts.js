@@ -21,6 +21,7 @@ const abstractImages = (str) => {
     })
   }
 
+
   return images
 
 }
@@ -39,7 +40,7 @@ const processPostsList = (list) => {
     posts._create_at = DateDiff(posts.create_at)
 
     // 在ios，html渲染需要转换格式
-    posts.content_html = posts.content_html.replace(/\/\/img/g, 'https://img')
+    // posts.content_html = posts.content_html.replace(/\/\/img/g, 'https://img')
     // posts.content_html = posts.content_html.replace(/\<p\>/g, '<span>')
     // posts.content_html = posts.content_html.replace(/\<\/p\>/g, '</span>')
 

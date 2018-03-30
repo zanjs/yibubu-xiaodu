@@ -153,7 +153,7 @@ class PostsList extends Component {
             let imagesUrl = ''
 
             if (topic.images && topic.images[0]) {
-              imagesUrl = 'https:' + topic.images[0].split('?')[0] + '?imageMogr2/auto-orient/thumbnail/!400/format/jpg'
+              imagesUrl = topic.images[0].split('?')[0] + '?imageMogr2/auto-orient/thumbnail/!400/format/jpg'
             }
 
             return(<TouchableOpacity style={styles.item} onPress={()=>{this.goTo(topic)}} activeOpacity={0.8}>
@@ -165,7 +165,7 @@ class PostsList extends Component {
                     {!hideUserInfo ?
                       <View>
                         <TouchableOpacity onPress={()=>{this.toPeople(topic.user_id)}} activeOpacity={0.8}>
-                          <Image source={{uri:'https:'+topic.user_id.avatar_url}} style={styles.avatar}  />
+                          <Image source={{uri: topic.user_id.avatar_url}} style={styles.avatar}  />
                         </TouchableOpacity>
                       </View>
                       : null}
@@ -241,14 +241,6 @@ class PostsList extends Component {
   }
 
 }
-
-/*
-refreshControl={<RefreshControl onRefresh={callback=>self.loadPostsList(callback, true)} />}
-
-
-
-
-*/
 
 export default connect((state, props) => ({
     // state: state，
