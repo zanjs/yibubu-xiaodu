@@ -121,7 +121,7 @@ const App = StackNavigator({
   Report: { screen: Report },
   Block: { screen: Block }
 },{
-  initialRouteName: 'SignIn',
+  initialRouteName: 'Welcome',
   navigationOptions: {
     headerTruncatedBackTitle: '返回',
     headerBackTitle: null,

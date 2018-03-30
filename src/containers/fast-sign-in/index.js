@@ -23,9 +23,6 @@ class FastSignIn extends Component {
     super(props)
     this.state = {}
     this.handleSignIn = this.handleSignIn.bind(this)
-    this.githubSignIn = this.githubSignIn.bind(this)
-    this.qqSignIn = this.qqSignIn.bind(this)
-    this.weiboSignIn = this.weiboSignIn.bind(this)
   }
 
   handleSignIn(access_token) {
