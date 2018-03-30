@@ -3,10 +3,29 @@ import { StackNavigator, TabNavigator } from 'react-navigation'
 import { ifIphoneX } from 'react-native-iphone-x-helper'
 
 import SignIn from '../containers/sign-in'
-import Home from '../containers/home'
+// import FastSignIn from '../containers/fast-sign-in'
+// import SignUp from '../containers/sign-up'
 
+import Welcome from '../containers/welcome'
+import Home from '../containers/home'
+import Forgot from '../containers/forgot'
+import Agreement from '../containers/agreement'
+
+import PostsDetail from '../containers/posts-detail'
+import Topics from '../containers/topics'
+import Notifications from '../containers/notifications'
+
+import Me from '../containers/me'
+import CommentDetail from '../containers/comment-detail'
+import WriteComment from '../containers/write-comment'
+import WritePosts from '../containers/write-posts'
+import ChooseTopic from '../containers/choose-topic'
+import TopicDetail from '../containers/topic-detail'
+import List from '../containers/list'
+// import PeopleDetail from '../containers/people-detail'
 
 // setting
+import Settings from '../containers/settings'
 import ResetNickname from '../containers/reset-nickname'
 import ResetBiref from '../containers/reset-brief'
 import ResetGender from '../containers/reset-gender'
@@ -17,6 +36,8 @@ import ResetPhone from '../containers/reset-phone'
 
 import BindingPhone from '../containers/binding-phone'
 
+import Report from '../containers/report'
+import Block from '../containers/block'
 
 
 let tabBarOptions = {
@@ -58,10 +79,12 @@ if (Platform.OS === 'android') {
 
 const MainScreenNavigator = TabNavigator({
   Home: { screen: Home },
-  SignIn: { screen: SignIn },
+  Topics: { screen: Topics },
+  Notifications: { screen: Notifications },
+  Me: { screen: Me }
 },
 {
-  initialRouteName: 'SignIn',
+  initialRouteName: 'Home',
   tabBarPosition: 'bottom',
   swipeEnabled:false,
   animationEnabled:false,
@@ -70,9 +93,22 @@ const MainScreenNavigator = TabNavigator({
 })
 
 const App = StackNavigator({
-  Main: { screen: SignIn },
+  Main: { screen: MainScreenNavigator },
+  Welcome: { screen: Welcome },
   SignIn: { screen: SignIn },
+  // FastSignIn: { screen: FastSignIn },
+  // SignUp: { screen: SignUp },
+  Forgot: { screen: Forgot },
   Home: { screen: Home },
+  PostsDetail: { screen: PostsDetail },
+  WriteComment: { screen: WriteComment },
+  WritePosts: { screen: WritePosts },
+  ChooseTopic: { screen: ChooseTopic },
+  CommentDetail: { screen: CommentDetail },
+  TopicDetail: { screen: TopicDetail },
+  List: { screen: List },
+  Me: { screen: Me },
+  Settings: { screen: Settings },
   ResetNickname: { screen: ResetNickname },
   ResetBiref: { screen: ResetBiref },
   ResetGender: { screen: ResetGender },
@@ -81,6 +117,9 @@ const App = StackNavigator({
   ResetAvatar: { screen: ResetAvatar },
   ResetPhone: { screen: ResetPhone },
   BindingPhone: { screen: BindingPhone },
+  Agreement: { screen: Agreement },
+  Report: { screen: Report },
+  Block: { screen: Block }
 },{
   initialRouteName: 'SignIn',
   navigationOptions: {

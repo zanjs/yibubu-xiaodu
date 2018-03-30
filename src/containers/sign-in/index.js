@@ -1,6 +1,16 @@
 
 import React, { Component } from 'react'
-import { Platform, Dimensions, StyleSheet, Text, Image, View, ScrollView, TextInput, Alert, TouchableOpacity, AsyncStorage, ImageBackground } from 'react-native'
+import { 
+  Platform, 
+  Dimensions, 
+  StyleSheet, 
+  Text, Image, 
+  View, ScrollView, 
+  TextInput, 
+  Alert, 
+  TouchableOpacity, 
+  AsyncStorage, 
+  ImageBackground } from 'react-native'
 
 import { NavigationActions } from 'react-navigation'
 import { ifIphoneX } from 'react-native-iphone-x-helper'
@@ -57,8 +67,6 @@ class SignIn extends Component {
     }
     this.submit = this.submit.bind(this)
     this.loadCaptcha = this.loadCaptcha.bind(this)
-    // this._weiboLogin = this._weiboLogin.bind(this)
-    // this._qqLogin = this._qqLogin.bind(this)
     this.handleSignIn = this.handleSignIn.bind(this)
     this.signup = this.signup.bind(this)
   }
@@ -114,7 +122,7 @@ class SignIn extends Component {
       // 储存token有效时间
       AsyncStorage.setItem('token_expires', (new Date().getTime() + 1000 * 60 * 60 * 24 * 30) + '', function(errs, result){
 
-        // setTimeout(()=>{
+        setTimeout(()=>{
 
           const resetAction = NavigationActions.reset({
             index: 0,
@@ -125,7 +133,7 @@ class SignIn extends Component {
 
           self.props.navigation.dispatch(resetAction)
 
-        // }, 1000)
+        }, 1000)
 
       })
 
