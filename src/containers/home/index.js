@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
-import { View, Text, ScrollView, Image, StyleSheet, Alert, TouchableOpacity, AsyncStorage } from 'react-native'
+import {Platform, View, Text, ScrollView, Image, StyleSheet, Alert, TouchableOpacity, AsyncStorage } from 'react-native'
 import ScrollableTabView from 'react-native-scrollable-tab-view'
-import Platform from 'Platform'
 
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
