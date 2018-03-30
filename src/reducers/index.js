@@ -28,19 +28,5 @@ let states = {
   block
 }
 
-/*
-let _states = {}
 
-for (let i in states) {
-  _states[i] = states[i]()
-}
-
-_states = merge({}, _states, {})
-
-export const getInitialState = () => {
-  return merge({}, _states, {})
-}
-
-export default merge({}, states, {})
-*/
 export default states
